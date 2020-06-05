@@ -3,7 +3,18 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
-
+    cache = {}
+    result =[]
+    for array in arrays:
+        for num in array:
+            if num in cache:
+                cache[num] += 1
+                # result.append(num)
+            else:
+                cache[num] = 1
+    for values in cache:
+        if cache[values] > 1:
+            result.append(values)
     return result
 
 
